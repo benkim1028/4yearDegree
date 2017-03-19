@@ -12,14 +12,14 @@ import YearCourses from './components/YearCourses'
 
 const Routes = (
     <Router history={browserHistory}>
-      <Route path="/" component={App}>
-        <IndexRoute component={Home}/>
-        <Route path="/courses" component={YearCourses}/>
-      </Route>
+        <Route path="/" component={App}>
+            <IndexRoute component={Home}/>
+            <Route path="/:facultyID" component={YearCourses}/>
+        </Route>
     </Router>
-)
+);
 
 ReactDOM.render(
-  Routes,
-  document.getElementById('root')
+    Routes,
+    document.getElementById('root')
 );

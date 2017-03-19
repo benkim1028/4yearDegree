@@ -9,13 +9,19 @@ class FacultyDropDown extends Component {
 
         this.state = {
             options: []
-        }
+        };
+
+        this.handleChange = this.handleChange.bind(this);
     }
 
     componentWillMount() {
         axios.get('http://localhost:3001/api/faculty').then((response) => {
             this.setState({options: response.data});
         });
+    }
+
+    handleChange(event) {
+        this.props.onChange(event.target.firstChild.innerHTML);
     }
 
     render() {
@@ -30,7 +36,8 @@ class FacultyDropDown extends Component {
                         text: elem.name,
                         value: elem.name
                     }
-                })} />
+                })}
+                onChange={this.handleChange}/>
         );
     }
 }
