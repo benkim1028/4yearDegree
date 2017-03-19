@@ -6,7 +6,7 @@ import './YearCourses.css'
 
 //import { Accordion } from 'semantic-ui-react'
 import axios from 'axios';
-
+import './Home.css'
 import _ from 'lodash'
 
 class YearCourses extends Component {
@@ -44,7 +44,7 @@ class YearCourses extends Component {
       ]
 
         return (
-            <div> 
+            <div className="DropDownContainer"> 
             <PageHeader className="head"><small>{this.props.name}</small></PageHeader>
               
               <div> {data.map((course, idx) => 
