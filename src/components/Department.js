@@ -2,38 +2,40 @@ import React, { Component } from 'react'
 import { Button } from 'semantic-ui-react'
 import {browserHistory} from 'react-router';
 
-import './Home.css'
-import FacultyDropDown from './FacultyDropdown.js'
+import './Department.css'
+import DepartmentDropdown from './DepartmentDropdown.js'
 
-class Home extends Component {
+class Department extends Component {
 
     constructor(props) {
         super(props);
+        console.log(props);
 
         this.state = {
-            value: ''}
+            value: ''
+        };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleClick = this.handleClick.bind(this)
     }
 
     handleClick() {
-        browserHistory.push('/' + this.state.value);
+        browserHistory.push('/'+encodeURI(this.state.value));
         console.log(this.state.value);
     }
 
     handleChange(value) {
         this.setState({value: value});
-        console.log(this.state.value);
     }
 
     render() {
         let props = {
-            onChange: this.handleChange
+            onChange: this.handleChange,
+            param: this.props.params.facultyID
         };
         return (
             <div className="DropDownContainer">
-                <FacultyDropDown {... props}/>
+                <DepartmentDropdown {... props}/>
                 <div className="ButtonGroups">
                     <Button className="NextButton" content='Next' icon='right arrow' labelPosition='right' onClick={this.handleClick}/>
                 </div>
@@ -42,4 +44,4 @@ class Home extends Component {
     }
 }
 
-export default Home;
+export default Department;

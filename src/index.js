@@ -4,6 +4,7 @@ import { Router, Route, browserHistory, IndexRoute } from 'react-router'
 
 import App from './components/App'
 import Home from './components/Home'
+import Department from './components/Department'
 import YearCourses from './components/YearCourses'
 import YearCoursesPage from './components/YearCoursesPage'
 
@@ -16,6 +17,7 @@ const Routes = (
       <Route path="/" component={App}>
         <IndexRoute component={Home}/>
         <Route path="/courses" component={YearCoursesPage}/>
+        <Route path="/:facultyID" component={Department}/>
       </Route>
 
     </Router>
