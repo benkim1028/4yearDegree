@@ -17,10 +17,11 @@ const Routes = (
         <IndexRoute component={Home}/>
         <Route path="/courses" component={YearCoursesPage}/>
       </Route>
+
     </Router>
-)
+);
 
 ReactDOM.render(
-  Routes,
-  document.getElementById('root')
+    Routes,
+    document.getElementById('root')
 );
