@@ -11,6 +11,7 @@ import thunkMiddleware from 'redux-thunk';
 import rootReducers from './reducers/index.js'
 import App from './components/App'
 import Home from './components/Home'
+import YearCourses from './components/YearCourses'
 
 // Add the reducer to your store on the `routing` key
 const store = createStore(rootReducers, {}, applyMiddleware(thunkMiddleware, promiseMiddleware() ));
@@ -23,6 +24,7 @@ const Routes = (
     <Router history={history}>
       <Route path="/" component={App}>
         <IndexRoute component={Home}></IndexRoute>
+        <Route path="/courses" component={YearCourses}/>
       </Route>
     </Router>
   </Provider>

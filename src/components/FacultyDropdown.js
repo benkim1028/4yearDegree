@@ -11,10 +11,6 @@ class DropDownComponent extends Component {
   }
 
   render() {
-    if(this.props.courses.isLoaded ) {
-      console.log(this.props.courses)
-    }
-
     const courses = this.props.courses.isLoaded ?
     (
       <Dropdown
