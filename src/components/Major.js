@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 import { Button } from 'semantic-ui-react'
 import {browserHistory} from 'react-router';
 
-import './Department.css'
-import DepartmentDropdown from './DepartmentDropdown.js'
+import './Major.css'
+import MajorDropdown from './MajorDropdown.js'
 
-class Department extends Component {
+class Major extends Component {
 
     constructor(props) {
         super(props);
@@ -20,7 +20,7 @@ class Department extends Component {
     }
 
     handleClick() {
-        browserHistory.push('/'+this.props.params.facultyID + '/' + this.state.value);
+        browserHistory.push('/'+encodeURI(this.state.value));
         console.log(this.state.value);
     }
 
@@ -31,11 +31,11 @@ class Department extends Component {
     render() {
         let props = {
             onChange: this.handleChange,
-            param: this.props.params.facultyID
+            param: this.props.params
         };
         return (
             <div className="DropDownContainer">
-                <DepartmentDropdown {... props}/>
+                <MajorDropdown {... props}/>
                 <div className="ButtonGroups">
                     <Button className="NextButton" content='Next' icon='right arrow' labelPosition='right' onClick={this.handleClick}/>
                 </div>
@@ -44,4 +44,4 @@ class Department extends Component {
     }
 }
 
-export default Department;
+export default Major;
