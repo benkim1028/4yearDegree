@@ -1,8 +1,23 @@
 import React, { Component } from 'react'
 
 import { Accordion } from 'semantic-ui-react'
+import axios from 'axios';
+
+import _ from 'lodash'
 
 class YearCourses extends Component {
+
+
+// const panels = _.times(1, () => ({
+//   title: this.props.,
+//   content: faker.lorem.paragraphs(),
+// }))
+
+// const AccordionExamplePanelsProp = () => (
+//   <Accordion panels={panels} />
+// )
+
+//export default AccordionExamplePanelsProp
 
     constructor(props) {
         super(props);
@@ -14,22 +29,26 @@ class YearCourses extends Component {
 
 
     componentWillMount() {
-        // enter get request to courses here just like faculty dropdown
+        
     }
 
     render() {
 
+      var data = [
+        {name:'cpsc110',credit:'3'},
+        {name:'cpsc111',credit:'4'}
+      ]
+
         return (
-            <div>
-                <ul>
-                    {this.state.courses.map((elem, i) => {
-                        return (
-                            <li key={i}>
-                                {elem.name}
-                            </li>
-                        )
-                    })}
-                </ul>
+            <div> 
+              <div> {this.props.name} </div>
+              <div> {data.map((course, idx) => 
+                <Accordion panels={_.times(1, () => ({
+                  title: course.name,
+                  content: course.credit,
+                }))}/>)
+
+              } </div>
             </div>
         );
     }
