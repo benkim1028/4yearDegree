@@ -13,7 +13,7 @@ class ListComponent extends Component {
     const courses = this.props.courses.isLoaded ? this.props.courses.body.map((elem,i) => {
       return (
         <li key={i}>
-          {elem.title}
+          {elem.name}
         </li>
       )
     }) : <li></li>
