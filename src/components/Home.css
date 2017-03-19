@@ -7,10 +7,10 @@
   margin-top: 2%;
 }
 
-.ButtonGroups button:first-child {
+.PrevButton {
   float: left;
 }
 
-.ButtonGroups button:last-child {
+.NextButton {
   float: right;
 }
