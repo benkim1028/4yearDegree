@@ -14,6 +14,10 @@ class UserCourse extends Component {
   	this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  clearText() {
+  	<input type="text" value="" />
+  }
+
   handleChange(event) {
   	this.setState({value: event.target.value.toUpperCase()});
   }
@@ -23,7 +27,7 @@ class UserCourse extends Component {
   	var newArray = this.state.options;
   	newArray.push(this.state.value.toUpperCase());
   	this.setState({arr:newArray});
-  	alert('Added ' +  this.state.value);
+  	clearText();
   }
 
   componentWillMount() {
