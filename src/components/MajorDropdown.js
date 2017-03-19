@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Dropdown } from 'semantic-ui-react'
 import axios from 'axios';
 
-class FacultyDropDown extends Component {
+class MajorDropdown extends Component {
 
     constructor(props) {
         super(props);
@@ -13,7 +13,8 @@ class FacultyDropDown extends Component {
     }
 
     componentWillMount() {
-        axios.get('http://localhost:3001/api/faculty').then((response) => {
+      console.log(this.props);
+        axios.get('http://localhost:3001/api/' + this.props.param.facultyID + '/' + this.props.param.departmentID).then((response) => {
             this.setState({options: response.data});
         });
     }
@@ -21,7 +22,7 @@ class FacultyDropDown extends Component {
     render() {
         return (
             <Dropdown
-                placeholder='Select Faculty'
+                placeholder='Select Major'
                 fluid
                 search
                 selection
@@ -36,4 +37,4 @@ class FacultyDropDown extends Component {
     }
 }
 
-export default FacultyDropDown;
+export default MajorDropdown;
