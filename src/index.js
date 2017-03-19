@@ -19,6 +19,8 @@ const Routes = (
     <Router history={browserHistory}>
       <Route path="/" component={App}>
         <IndexRoute component={Home}/>
+        <Route path="/courses" component={YearCoursesPage}/>
+
         <Route path="/:facultyID" component={Department}/>
         <Route path="/:facultyID/:departmentID" component={Major}/>
         <Route path="/:majorID" component={YearCoursesPage}/>
