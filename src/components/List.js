@@ -10,23 +10,18 @@ class ListComponent extends Component {
   }
 
   render() {
-
-    if(this.props.courses.isLoaded) {
-      console.log('here');
-      console.log(this.props.courses)
-    }
-
-    // const courses = this.props.courses.map((elem,i) => {
-    //   return (
-    //     <li key={i}>
-    //       {elem}
-    //     </li>
-    //   )
-    // })
+    const courses = this.props.courses.isLoaded ? this.props.courses.body.map((elem,i) => {
+      return (
+        <li key={i}>
+          {elem.title}
+        </li>
+      )
+    }) : <li></li>
 
     return (
       <div>
         <ul>
+          {courses}
         </ul>
       </div>
     );

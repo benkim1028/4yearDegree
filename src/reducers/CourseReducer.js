@@ -3,12 +3,10 @@ import R from 'ramda'
 export default (state = {}, action) => {
   switch(action.type) {
   case 'GET_CPSC_COURSES_PENDING':
-    console.log('pending');
     return R.merge(state, {
       isLoading: true
     });
   case 'GET_CPSC_COURSES_FULFILLED':
-    console.log('fufilled');
     return R.merge(state, {
       body: action.payload,
       isLoading: false,
@@ -16,7 +14,8 @@ export default (state = {}, action) => {
     });
   case 'GET_CPSC_COURSES_FAILED':
     return R.merge(state, {
-      isLoaded: false
+      isLoaded: true,
+      body: undefined
     });
   default:
     return state
