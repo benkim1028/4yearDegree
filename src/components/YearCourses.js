@@ -8,7 +8,7 @@ import { Accordion } from 'semantic-ui-react'
 
 export default AccordionExampleStyled
 
-class YearCourses extends Component {
+class Faculty extends Component {
 
   componentWillMount() {
     

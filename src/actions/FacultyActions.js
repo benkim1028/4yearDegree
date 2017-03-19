@@ -1,8 +1,8 @@
 import request from 'superagent'
 
-export function getCourses() {
+export function getFaculty() {
  return {
-   type: 'GET_CPSC_COURSES',
+   type: 'GET_FACULTY',
    payload: request.get('http://localhost:3001/api/faculty')
    .then(res => res.body)
  }

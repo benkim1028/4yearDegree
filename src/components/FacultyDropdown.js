@@ -7,18 +7,18 @@ import * as courseActions from '../actions/CourseActions'
 class DropDownComponent extends Component {
 
   componentWillMount() {
-    this.props.fetchCourses()
+    this.props.getFaculty()
   }
 
   render() {
-    const courses = this.props.courses.isLoaded ?
+    const faculty = this.props.faculty.isLoaded ?
     (
       <Dropdown
         placeholder='Select Faculty'
         fluid
         search
         selection
-        options={this.props.courses.body.map((elem, i) => {
+        options={this.props.faculty.body.map((elem, i) => {
           return {
             text: elem.name,
             value: elem.name
@@ -28,18 +28,18 @@ class DropDownComponent extends Component {
 
     return (
       <div>
-        {courses}
+        {faculty}
       </div>
     );
   }
 }
 // gets relevant props (for list) from global state
 const mapStateToProps = (state) => ({
-  courses: state.courses
+  faculty: state.faculty
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchCourses: () => dispatch(courseActions.getCourses())
+  fetchFaculty: () => dispatch(courseActions.getFaculty())
 })
 
 const FacultyDropDown = connect(mapStateToProps, mapDispatchToProps)(DropDownComponent)
