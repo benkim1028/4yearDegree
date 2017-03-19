@@ -10,28 +10,28 @@ class App extends Component {
 	}
 
 	
-  render() {
-    return (
-      <div>
-      <YearCourses
-      	yearName="1",
-      	courses=
-      />
-      <YearCourses
-
-
-      />
-      <YearCourses
-
-      />
-      <YearCourses
-
-      />
-
-      	
-      </div>
-    );
-  }
+  // render() {
+  //   return (
+  //     <div>
+  //     <YearCourses
+  //     	yearName="1",
+  //     	courses=
+  //     />
+  //     <YearCourses
+  //
+  //
+  //     />
+  //     <YearCourses
+  //
+  //     />
+  //     <YearCourses
+  //
+  //     />
+  //
+  //
+  //     </div>
+  //   );
+  // }
 }
 
 export default App;

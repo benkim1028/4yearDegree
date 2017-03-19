@@ -1,47 +1,38 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 import { Dropdown } from 'semantic-ui-react'
+import axios from 'axios';
 
-import * as courseActions from '../actions/CourseActions'
+class FacultyDropDown extends Component {
 
-class DropDownComponent extends Component {
+    constructor(props) {
+        super(props);
 
-  componentWillMount() {
-    this.props.getFaculty()
-  }
+        this.state = {
+            options: []
+        }
+    }
 
-  render() {
-    const faculty = this.props.faculty.isLoaded ?
-    (
-      <Dropdown
-        placeholder='Select Faculty'
-        fluid
-        search
-        selection
-        options={this.props.faculty.body.map((elem, i) => {
-          return {
-            text: elem.name,
-            value: elem.name
-          }
-        })} />)
-    : <div></div>
+    componentWillMount() {
+        axios.get('http://localhost:3001/api/faculty').then((data) => {
+            this.setState({options: data.data});
+        });
+    }
 
-    return (
-      <div>
-        {faculty}
-      </div>
-    );
-  }
+    render() {
+        return (
+            <Dropdown
+                placeholder='Select Faculty'
+                fluid
+                search
+                selection
+                options={this.state.options.map((elem, i) => {
+                    return {
+                        text: elem.name,
+                        value: elem.name
+                    }
+                })} />
+        );
+    }
 }
-// gets relevant props (for list) from global state
-const mapStateToProps = (state) => ({
-  faculty: state.faculty
-})
 
-const mapDispatchToProps = (dispatch) => ({
-  fetchFaculty: () => dispatch(courseActions.getFaculty())
-})
-
-const FacultyDropDown = connect(mapStateToProps, mapDispatchToProps)(DropDownComponent)
-
-export default FacultyDropDown
+export default FacultyDropDown;
