@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
 
-import names from './NameReducer'
+import courses from './CourseReducer'
 
 const rootReducer = combineReducers({
-  names,
+  courses,
   routing: routerReducer
 })
 

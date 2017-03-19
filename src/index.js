@@ -19,11 +19,10 @@ const store = createStore(rootReducers, {}, applyMiddleware(thunkMiddleware, pro
 const history = syncHistoryWithStore(browserHistory, store)
 
 const Routes = (
-  <Provider store={store}> {/** current state of the application*/}
-    <Router history={history}> {/** routing, passes the URLs into the history object*/}
+  <Provider store={store}>
+    <Router history={history}>
       <Route path="/" component={App}>
         <IndexRoute component={Home}></IndexRoute>
-
       </Route>
     </Router>
   </Provider>

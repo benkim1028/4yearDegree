@@ -1,10 +1,11 @@
 import request from 'superagent'
 
-export function getUserActions(token) {
+export function getCourses() {
  return {
-   type: types.FETCH_COURSES,
-   payload: request.get('/search').end((err, res) => {
-   	return res.json()
+   type: 'GET_CPSC_COURSES',
+   payload: request.get('https://jsonplaceholder.typicode.com/posts').then((err, res) => {
+     console.log(res);
+     return res.body()
    })
  }
 }
