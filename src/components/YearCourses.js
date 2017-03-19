@@ -52,7 +52,8 @@ class YearCourses extends Component {
               
               <div> {this.props.data.map((course, idx) => 
                 <Panel collapsible defaultCollapsed key={idx} header={course.code}>
-                {typeof (course.prereq) === undefined ? "No prerequesites provided." : course.prereq}
+                    <p>Credits: {course.credit}</p>
+                {(typeof (course.prereq) === 'undefined') ? "No prerequesites provided." : course.prereq}
                 </Panel>
 
                 )
