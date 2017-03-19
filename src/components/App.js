@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
-import './Banner.css'
+import './Banner.css';
+import {PageHeader} from 'react-bootstrap'
 
 class App extends Component {
-
 	
   render() {
     return (
       <div className="App">
-      	<div className="Banner"> 4 Year Degree</div>
-        
+      <PageHeader className="Banner"> 4 Year Degree </PageHeader>        
         {this.props.children}
       </div>
     );
