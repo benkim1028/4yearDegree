@@ -1,0 +1,16 @@
+.DropDownContainer {
+  padding: 0 10;
+  margin: 0 25%;
+}
+
+.ButtonGroups {
+  margin-top: 2%;
+}
+
+.PrevButton {
+  float: left;
+}
+
+.NextButton {
+  float: right;
+}
