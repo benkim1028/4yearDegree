@@ -25,31 +25,34 @@ class YearCourses extends Component {
 
     constructor(props) {
         super(props);
+        console.log(props);
 
         this.state = {
-            courses: []
+            options: []
         }
     }
 
 
-    componentWillMount() {
-        
-    }
+
+    // componentWillMount() {
+    //     console.log('http://localhost:3001/api/' + this.props.param.facultyID + '/' + this.props.param.departmentID + '/' + this.props.param.majorID);
+    //     axios.get('http://localhost:3001/api/' + this.props.param.facultyID + '/' + this.props.param.departmentID + '/' + this.props.param.majorID).then((response) => {
+    //         this.setState({options: response.data});
+    //     });
+    // }
+
+    
 
     render() {
-
-      var data = [
-        {name:'cpsc110',credit:'3'},
-        {name:'cpsc111',credit:'4'}
-      ]
+      
 
         return (
             <div className="DropDownContainer"> 
             <PageHeader className="head"><small>{this.props.name}</small></PageHeader>
               
-              <div> {data.map((course, idx) => 
-                <Panel collapsible defaultCollapsed header={course.name}>
-                {course.credit}
+              <div> {this.props.data.map((course, idx) => 
+                <Panel collapsible defaultCollapsed key={idx} header={course.code}>
+                {course.prereqs}
                 </Panel>
 
                 )

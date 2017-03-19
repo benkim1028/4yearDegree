@@ -20,7 +20,7 @@ class Major extends Component {
     }
 
     handleClick() {
-        browserHistory.push('/'+encodeURI(this.state.value));
+        browserHistory.push('/' + this.props.params.facultyID + '/' + this.props.params.departmentID + '/' + this.state.value + '/users');
         console.log(this.state.value);
     }
 

@@ -8,12 +8,14 @@ class UserCourse extends Component {
 
 	constructor(props) {
   	super(props);
+  	console.log(props);
   	this.state = {
   		options:[]
   	};
 
   	this.handleChange = this.handleChange.bind(this);
   	this.handleSubmit = this.handleSubmit.bind(this);
+  	this.handleClick = this.handleClick.bind(this);
   }
 
   handleChange(event) {
@@ -29,7 +31,7 @@ class UserCourse extends Component {
   }
 
   handleClick(event) {
-  	browserHistory.push('/courses');
+  	browserHistory.push('/' + this.props.params.facultyID + '/' + this.props.params.departmentID + '/' + this.props.params.majorID + '/courses');
   }
 
   componentWillMount() {

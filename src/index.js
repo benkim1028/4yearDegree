@@ -22,11 +22,11 @@ const Routes = (
     <Router history={browserHistory}>
       <Route path="/" component={App}>
         <IndexRoute component={Home}/>
-        <Route path="/courses" component={YearCoursesPage}/> 
-        <Route path="/users" component={UserCourse}/>
+        <Route path="/:facultyID/:departmentID/:majorID/courses" component={YearCoursesPage}/> 
+        <Route path="/:facultyID/:departmentID/:majorID/users" component={UserCourse}/>
         <Route path="/:facultyID" component={Department}/>
         <Route path="/:facultyID/:departmentID" component={Major}/>
-        <Route path="/:majorID" component={YearCoursesPage}/>
+        <Route path="/:facultyID/:departmentID/:majorID" component={YearCoursesPage}/>
         
       </Route>
 
