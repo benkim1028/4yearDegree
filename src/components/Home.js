@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 
-import List from './List'
+import FacultyDropDown from './FacultyDropdown.js'
 
 class Home extends Component {
   render() {
     return (
       <div>
-        <List />
+        <FacultyDropDown />
       </div>
     )
   }
