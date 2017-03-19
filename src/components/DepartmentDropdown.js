@@ -10,18 +10,12 @@ class DepartmentDropdown extends Component {
         this.state = {
             options: []
         };
-
-        this.handleChange = this.handleChange.bind(this);
     }
 
     componentWillMount() {
         axios.get('http://localhost:3001/api/' + encodeURI(this.props.param)).then((response) => {
             this.setState({options: response.data});
         });
-    }
-
-    handleChange(event) {
-        this.props.onChange(event.target.firstChild.innerHTML);
     }
 
     render() {
@@ -37,7 +31,7 @@ class DepartmentDropdown extends Component {
                         value: elem.name
                     }
                 })}
-                onChange={this.handleChange}/>
+                onChange={(e, {value}) => this.props.onChange(value)}/>
         );
     }
 }
