@@ -13,8 +13,8 @@ class FacultyDropDown extends Component {
     }
 
     componentWillMount() {
-        axios.get('http://localhost:3001/api/faculty').then((data) => {
-            this.setState({options: data.data});
+        axios.get('http://localhost:3001/api/faculty').then((response) => {
+            this.setState({options: response.data});
         });
     }
 

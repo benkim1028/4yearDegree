@@ -13,7 +13,7 @@ import YearCourses from './components/YearCourses'
 const Routes = (
     <Router history={browserHistory}>
       <Route path="/" component={App}>
-        <IndexRoute component={Home}></IndexRoute>
+        <IndexRoute component={Home}/>
         <Route path="/courses" component={YearCourses}/>
       </Route>
     </Router>
