@@ -1,14 +1,23 @@
 import R from 'ramda'
 
-let temp_name = "Jimmy";
-let temp_name_list = []
-
-export default (state = {}, action) => {
+export default (state, action) => {
   switch(action.type) {
-  case 'GET_NAMES':
-    let temp = temp_name_list.push(temp_name)
-    return R.merge(state, { temp })
+  case 'GET_CPSC_COURSES_PENDING':
+    return R.merge(state, {
+      isLoading: true
+    });
+  case 'GET_CPSC_COURSES_FULFILLED':
+    return R.merge(state, {
+      body: action.payload,
+      isLoading: false,
+      isLoaded: true
+    });
+  case 'GET_CPSC_COURSES_FAILED':
+    return R.merge(state, {
+      isLoaded: false
+    });
   default:
     return state
   }
 }
+
