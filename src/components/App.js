@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
+import './Banner.css'
 
 class App extends Component {
+
+	
   render() {
     return (
       <div className="App">
-        <h1>4 Year Degree</h1>
+      	<div className="Banner"> 4 Year Degree</div>
+        
         {this.props.children}
       </div>
     );
