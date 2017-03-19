@@ -17,10 +17,12 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 // Create an enhanced history that syncs navigation events with the store
 
 const Routes = (
+    // "/courses" for testing purposes
 
     <Router history={browserHistory}>
       <Route path="/" component={App}>
         <IndexRoute component={Home}/>
+        <Route path="/courses" component={YearCoursesPage}/> 
         <Route path="/users" component={UserCourse}/>
         <Route path="/:facultyID" component={Department}/>
         <Route path="/:facultyID/:departmentID" component={Major}/>

@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import { Segment, Divider } from 'semantic-ui-react'
+import "./Home.css"
+import { Button } from 'semantic-ui-react'
+import {browserHistory} from 'react-router';
 
 class UserCourse extends Component {
 
@@ -25,12 +28,16 @@ class UserCourse extends Component {
   	this.setState({value: ""});
   }
 
+  handleClick(event) {
+  	browserHistory.push('/courses');
+  }
+
   componentWillMount() {
   }
 
 	render() {
 		return (
-			<div>
+			<div className="DropDownContainer">
 	      <Segment>
 	      	<div>
 	      		<form onSubmit={this.handleSubmit}>
@@ -55,10 +62,12 @@ class UserCourse extends Component {
 			      		{course}
 			      	</li>
 			      		)}
-			      	
 	          </ul>
 		      </div>
 	      </Segment>
+	      <div className="ButtonGroups">
+          <Button className="NextButton" content='Next' icon='right arrow' labelPosition='right' onClick={this.handleClick}/>
+        </div>
       </div>
     );
   }
