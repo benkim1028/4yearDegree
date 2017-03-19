@@ -8,6 +8,7 @@ import Department from './components/Department'
 import Major from './components/Major'
 import YearCourses from './components/YearCourses'
 import YearCoursesPage from './components/YearCoursesPage'
+import UserCourse from './components/UserCourse'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -16,17 +17,21 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 // Create an enhanced history that syncs navigation events with the store
 
 const Routes = (
+
     <Router history={browserHistory}>
       <Route path="/" component={App}>
+        <Route path="/users" component={UserCourse}/>
         <IndexRoute component={Home}/>
         <Route path="/courses" component={YearCoursesPage}/>
 
         <Route path="/:facultyID" component={Department}/>
         <Route path="/:facultyID/:departmentID" component={Major}/>
         <Route path="/:majorID" component={YearCoursesPage}/>
+        
       </Route>
 
     </Router>
+
 );
 
 ReactDOM.render(
